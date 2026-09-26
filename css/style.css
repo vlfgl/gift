@@ -1,0 +1,158 @@
+/* 기본 설정 및 부드러운 스크롤 */
+/* 모든 요소에 박스 사이즈 기준 적용 (여백 삐져나감 방지) */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Pretendard', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+/* 네비게이션 바 */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+/* 섹션 공통 스타일 */
+.section {
+    padding: 5rem 2rem;
+    text-align: center;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.bg-light {
+    background-color: #f9f9f9;
+}
+
+/* 버튼 스타일 */
+button, .btn-primary {
+    background-color: #ff6b6b;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+}
+button:hover, .btn-primary:hover {
+    background-color: #ff5252;
+}
+
+/* 폼 스타일 */
+#gift-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    text-align: left;
+}
+.input-group {
+    margin-bottom: 1rem;
+}
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* 꿀팁 카드 스타일 */
+.tip-cards {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    width: 300px;
+}
+
+/* 상태 메시지 및 결과창 */
+.hidden {
+    display: none !important;
+}
+#status-message {
+    color: #ff6b6b;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+#result-area {
+    background: #e3f2fd;
+    padding: 2rem;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-top: 2rem;
+    text-align: left;
+}
+
+/* 📱 반응형 디자인 (모바일 화면) */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* 모바일에서는 메뉴 숨김 */
+    }
+    .section {
+        padding: 3rem 1rem;
+    }
+    
+    /* 폼 박스 모바일 최적화 */
+    #gift-form {
+        padding: 1.5rem; /* 모바일에서는 안쪽 여백을 조금 줄임 */
+        width: 100%;
+    }
+
+    /* 꿀팁 카드 모바일 최적화 */
+    .tip-cards {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+    .card {
+        width: 100%;
+        margin-bottom: 1rem; /* 카드들이 위아래로 붙지 않게 간격 띄움 */
+    }
+}
