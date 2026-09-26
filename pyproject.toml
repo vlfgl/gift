@@ -1,6 +1,0 @@
-[project]
-name = "gift-pick"
-version = "0.1.0"
-
-[tool.vercel]
-entrypoint = "api.recommend:handler"
